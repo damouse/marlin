@@ -1794,10 +1794,10 @@
 
 #if EITHER(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL)
 // Override the mesh area if the automatic (max) area is too large
-//#define MESH_MIN_X MESH_INSET
-//#define MESH_MIN_Y MESH_INSET
-//#define MESH_MAX_X X_BED_SIZE - (MESH_INSET)
-//#define MESH_MAX_Y Y_BED_SIZE - (MESH_INSET)
+#define MESH_MIN_X MESH_INSET
+#define MESH_MIN_Y MESH_INSET
+#define MESH_MAX_X X_BED_SIZE - (MESH_INSET)
+#define MESH_MAX_Y Y_BED_SIZE - (MESH_INSET)
 #endif
 
 /**
@@ -2705,7 +2705,7 @@
  *
  * Comment *_STALL_SENSITIVITY to disable sensorless homing for that axis.
  */
-//#define SENSORLESS_HOMING // StallGuard capable drivers only
+#define SENSORLESS_HOMING // StallGuard capable drivers only
 
 #if EITHER(SENSORLESS_HOMING, SENSORLESS_PROBING)
 // TMC2209: 0...255. TMC2130: -64...63
