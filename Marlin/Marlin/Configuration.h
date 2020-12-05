@@ -867,7 +867,7 @@
  * The probe replaces the Z-MIN endstop and is used for Z homing.
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
-#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+// #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
 //#define USE_PROBE_FOR_Z_HOMING
@@ -1017,7 +1017,8 @@
 // From: https://www.thingiverse.com/thing:2494642
 // 61cm, 7.5cm y
 #define NOZZLE_TO_PROBE_OFFSET \
-    { -610.0, -75.0, -50.0 }
+    {0.0, 0.0, 0.0}
+    // { -610.0, -75.0, -50.0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1484,7 +1485,7 @@
 #endif
 
 // Homing speeds (mm/min)
-#define HOMING_FEEDRATE_XY (20 * 60)
+#define HOMING_FEEDRATE_XY (40 * 60)
 #define HOMING_FEEDRATE_Z (4 * 60)
 
 // Validate that endstops are triggered on homing moves
@@ -1562,7 +1563,7 @@
  *   M501 - Read settings from EEPROM. (i.e., Throw away unsaved changes)
  *   M502 - Revert settings to "factory" defaults. (Follow with M500 to init the EEPROM.)
  */
-#define EEPROM_SETTINGS  // Persistent storage with M500 and M501
+// #define EEPROM_SETTINGS  // Persistent storage with M500 and M501
 //#define DISABLE_M503        // Saves ~2700 bytes of PROGMEM. Disable for release!
 #define EEPROM_CHITCHAT     // Give feedback on EEPROM commands. Disable to save PROGMEM.
 #define EEPROM_BOOT_SILENT  // Keep M503 quiet and only give errors during first load

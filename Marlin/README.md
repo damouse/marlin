@@ -1,5 +1,4 @@
 
-
 Reddit guy: https://www.reddit.com/r/CR10/comments/huaysw/marlin_configuration_cr10s_skr_14_bltouch_tmc2209/
 
 # Marlin 3D Printer Firmware
