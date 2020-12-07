@@ -667,12 +667,12 @@
 #endif
 
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
-#define X_MIN_ENDSTOP_INVERTING false        // Set to true to invert the logic of the endstop.
-#define Y_MIN_ENDSTOP_INVERTING false        // Set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_INVERTING false        // Set to true to invert the logic of the endstop.
-#define X_MAX_ENDSTOP_INVERTING false        // Set to true to invert the logic of the endstop.
-#define Y_MAX_ENDSTOP_INVERTING false        // Set to true to invert the logic of the endstop.
-#define Z_MAX_ENDSTOP_INVERTING false        // Set to true to invert the logic of the endstop.
+#define X_MIN_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define Y_MIN_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define Z_MIN_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define X_MAX_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define Y_MAX_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define Z_MAX_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
 #define Z_MIN_PROBE_ENDSTOP_INVERTING true  // Set to true to invert the logic of the probe.
 
 /**
@@ -1017,7 +1017,7 @@
 // From: https://www.thingiverse.com/thing:2494642
 // 61cm, 7.5cm y
 #define NOZZLE_TO_PROBE_OFFSET \
-    {-61.0, -7.5, -7.0}
+    { -61.10, -7.5, -2.0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1164,10 +1164,10 @@
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
-#define Y_MIN_POS 0
+#define Y_MIN_POS 20
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE + 20
-#define Y_MAX_POS Y_BED_SIZE
+#define Y_MAX_POS Y_BED_SIZE + 20
 #define Z_MAX_POS 400
 
 /**
@@ -1396,7 +1396,7 @@
 
 //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
-#define MESH_INSET 10          // Set Mesh bounds as an inset region of the bed
+#define MESH_INSET 10         // Set Mesh bounds as an inset region of the bed
 #define GRID_MAX_POINTS_X 10  // Don't use more than 15 points per axis, implementation limited.
 #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
@@ -2591,7 +2591,7 @@
  * Set this manually if there are extra servos needing manual control.
  * Set to 0 to turn off servo support.
  */
-#define NUM_SERVOS 1 // Servo index starts with 0 for M280 command
+#define NUM_SERVOS 1  // Servo index starts with 0 for M280 command
 
 // (ms) Delay  before the next move will start, to give the servo time to reach its target angle.
 // 300ms is a good value but you can try less delay.
