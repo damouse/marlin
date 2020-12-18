@@ -502,7 +502,7 @@
 #define CHAMBER_AUTO_FAN_PIN -1
 
 #define EXTRUDER_AUTO_FAN_TEMPERATURE 50
-#define EXTRUDER_AUTO_FAN_SPEED 255  // 255 == full speed
+#define EXTRUDER_AUTO_FAN_SPEED 204  // 255 == full speed
 #define CHAMBER_AUTO_FAN_TEMPERATURE 30
 #define CHAMBER_AUTO_FAN_SPEED 255
 
@@ -530,8 +530,8 @@
 //#define CASE_LIGHT_MAX_PWM 128            // Limit pwm
 //#define CASE_LIGHT_MENU                   // Add Case Light options to the LCD menu
 //#define CASE_LIGHT_NO_BRIGHTNESS          // Disable brightness control. Enable for non-PWM
-//lighting. #define CASE_LIGHT_USE_NEOPIXEL           // Use NeoPixel LED as case light, requires
-//NEOPIXEL_LED.
+// lighting. #define CASE_LIGHT_USE_NEOPIXEL           // Use NeoPixel LED as case light, requires
+// NEOPIXEL_LED.
 #if ENABLED(CASE_LIGHT_USE_NEOPIXEL)
 #define CASE_LIGHT_NEOPIXEL_COLOR \
     { 255, 255, 255, 255 }  // { Red, Green, Blue, White }
@@ -689,7 +689,7 @@
 #define QUICK_HOME  // If G28 contains XY do a diagonal move first
 //#define HOME_Y_BEFORE_X                     // If G28 contains XY home Y before X
 //#define HOME_Z_FIRST                        // Home Z first. Requires a Z-MIN endstop (not a
-//probe). #define CODEPENDENT_XY_HOMING               // If X/Y can't home without homing Y/X first
+// probe). #define CODEPENDENT_XY_HOMING               // If X/Y can't home without homing Y/X first
 
 // @section bltouch
 
@@ -711,7 +711,7 @@
 
 // Safety: The probe needs time to recognize the command.
 //         Minimum command delay (ms). Enable and increase if needed.
-//#define BLTOUCH_DELAY 500
+#define BLTOUCH_DELAY 500
 
 /**
  * Settings for BLTOUCH Classic 1.2, 1.3 or BLTouch Smart 1.0, 2.0, 2.2, 3.0, 3.1, and most clones:
@@ -845,12 +845,12 @@
 
 #define RESTORE_LEVELING_AFTER_G35  // Enable to restore leveling setup after operation
 //#define REPORT_TRAMMING_MM          // Report Z deviation (mm) for each point relative to the
-//first
+// first
 
 //#define ASSISTED_TRAMMING_MENU_ITEM // Add a menu item to run G35 Assisted Tramming (MarlinUI)
 //#define ASSISTED_TRAMMING_WIZARD    // Make the menu item open a Tramming Wizard sub-menu
 //#define ASSISTED_TRAMMING_WAIT_POSITION { X_CENTER, Y_CENTER, 30 } // Move the nozzle out of the
-//way for adjustment
+// way for adjustment
 
 /**
  * Screw thread:
@@ -912,7 +912,7 @@
  * Use M201 F<freq> G<min%> to change limits at runtime.
  */
 //#define XY_FREQUENCY_LIMIT      10 // (Hz) Maximum frequency of small zigzag infill moves. Set
-//with M201 F<hertz>.
+// with M201 F<hertz>.
 #ifdef XY_FREQUENCY_LIMIT
 #define XY_FREQUENCY_MIN_PERCENT \
     5  // (percent) Minimum FR percentage to apply. Set with M201 G<min%>.
@@ -974,7 +974,7 @@
 #if ENABLED(CALIBRATION_GCODE)
 
 //#define CALIBRATION_SCRIPT_PRE  "M117 Starting Auto-Calibration\nT0\nG28\nG12\nM117
-//Calibrating..." #define CALIBRATION_SCRIPT_POST "M500\nM117 Calibration data saved"
+// Calibrating..." #define CALIBRATION_SCRIPT_POST "M500\nM117 Calibration data saved"
 
 #define CALIBRATION_MEASUREMENT_RESOLUTION 0.01  // mm
 
@@ -1061,7 +1061,7 @@
 //#define PWM_MOTOR_CURRENT { 1300, 1300, 1250 }          // Values in milliamps
 //#define DIGIPOT_MOTOR_CURRENT { 135,135,135,135,135 }   // Values 0-255 (RAMBO 135 = ~0.75A, 185 =
 //~1A) #define DAC_MOTOR_CURRENT_DEFAULT { 70, 80, 90, 80 }    // Default drive percent - X, Y, Z, E
-//axis
+// axis
 
 /**
  * I2C-based DIGIPOTs (e.g., Azteeg X3 Pro)
@@ -1078,7 +1078,7 @@
     { 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 }  // AZTEEG_X3_PRO
 
 //#define DIGIPOT_USE_RAW_VALUES    // Use DIGIPOT_MOTOR_CURRENT raw wiper values (instead of A4988
-//motor currents)
+// motor currents)
 
 /**
  * Common slave addresses:
@@ -1178,7 +1178,7 @@
 #define NEO2_USER_PRESET_WHITE 255       // User defined WHITE value
 #define NEO2_USER_PRESET_BRIGHTNESS 255  // User defined intensity
 //#define NEO2_USER_PRESET_STARTUP       // Have the printer display the user preset color on
-//startup for the second strip
+// startup for the second strip
 #endif
 #endif
 
@@ -1273,13 +1273,13 @@
     false  // Power Loss Recovery enabled by default. (Set with 'M413 Sn' & M500)
 //#define BACKUP_POWER_SUPPLY       // Backup power / UPS to move the steppers on power loss
 //#define POWER_LOSS_RECOVER_ZHOME  // Z homing is needed for proper recovery. 99.9% of the time
-//this should be disabled! #define POWER_LOSS_ZRAISE       2 // (mm) Z axis raise on resume (on
-//power loss with UPS) #define POWER_LOSS_PIN         44 // Pin to detect power loss. Set to -1 to
-//disable default pin on boards without module. #define POWER_LOSS_STATE     HIGH // State of pin
-//indicating power loss #define POWER_LOSS_PULLUP         // Set pullup / pulldown as appropriate
-//for your sensor #define POWER_LOSS_PULLDOWN #define POWER_LOSS_PURGE_LEN   20 // (mm) Length of
-//filament to purge on resume #define POWER_LOSS_RETRACT_LEN 10 // (mm) Length of filament to
-//retract on fail. Requires backup power.
+// this should be disabled! #define POWER_LOSS_ZRAISE       2 // (mm) Z axis raise on resume (on
+// power loss with UPS) #define POWER_LOSS_PIN         44 // Pin to detect power loss. Set to -1 to
+// disable default pin on boards without module. #define POWER_LOSS_STATE     HIGH // State of pin
+// indicating power loss #define POWER_LOSS_PULLUP         // Set pullup / pulldown as appropriate
+// for your sensor #define POWER_LOSS_PULLDOWN #define POWER_LOSS_PURGE_LEN   20 // (mm) Length of
+// filament to purge on resume #define POWER_LOSS_RETRACT_LEN 10 // (mm) Length of filament to
+// retract on fail. Requires backup power.
 
 // Without a POWER_LOSS_PIN the following option helps reduce wear on the SD card,
 // especially with "vase mode" printing. Set too high and vases cannot be continued.
@@ -1496,7 +1496,7 @@
  */
 //#define STATUS_COMBINE_HEATERS    // Use combined heater images instead of separate ones
 //#define STATUS_HOTEND_NUMBERLESS  // Use plain hotend icons instead of numbered ones (with 2+
-//hotends)
+// hotends)
 #define STATUS_HOTEND_INVERTED  // Show solid nozzle bitmaps when heating (Requires
                                 // STATUS_HOTEND_ANIM)
 #define STATUS_HOTEND_ANIM      // Use a second bitmap to indicate hotend heating
@@ -1508,7 +1508,7 @@
 //#define STATUS_FAN_FRAMES 3       // :[0,1,2,3,4] Number of fan animation frames
 //#define STATUS_HEAT_PERCENT       // Show heating in a progress bar
 //#define BOOT_MARLIN_LOGO_SMALL    // Show a smaller Marlin logo on the Boot Screen (saving 399
-//bytes of flash) #define BOOT_MARLIN_LOGO_ANIMATED // Animated Marlin logo. Costs ~‭3260 (or
+// bytes of flash) #define BOOT_MARLIN_LOGO_ANIMATED // Animated Marlin logo. Costs ~‭3260 (or
 //~940) bytes of PROGMEM.
 
 // Frivolous Game Options
@@ -1694,12 +1694,12 @@
 #define BABYSTEPPING
 #if ENABLED(BABYSTEPPING)
 //#define INTEGRATED_BABYSTEPPING         // EXPERIMENTAL integration of babystepping into the
-//Stepper ISR #define BABYSTEP_WITHOUT_HOMING #define BABYSTEP_ALWAYS_AVAILABLE       // Allow
-//babystepping at all times (not just during movement). #define BABYSTEP_XY                     //
-//Also enable X/Y Babystepping. Not supported on DELTA!
+// Stepper ISR #define BABYSTEP_WITHOUT_HOMING #define BABYSTEP_ALWAYS_AVAILABLE       // Allow
+// babystepping at all times (not just during movement). #define BABYSTEP_XY                     //
+// Also enable X/Y Babystepping. Not supported on DELTA!
 #define BABYSTEP_INVERT_Z false  // Change if Z babysteps should go the other way
 //#define BABYSTEP_MILLIMETER_UNITS       // Specify BABYSTEP_MULTIPLICATOR_(XY|Z) in mm instead of
-//micro-steps
+// micro-steps
 #define BABYSTEP_MULTIPLICATOR_Z \
     10  // (steps or mm) Steps or millimeter distance for each Z babystep
 #define BABYSTEP_MULTIPLICATOR_XY \
@@ -1711,7 +1711,7 @@
     1250  // Maximum interval between clicks, in milliseconds.
           // Note: Extra time may be added to mitigate controller latency.
 //#define MOVE_Z_WHEN_IDLE              // Jump to the move Z menu on doubleclick when printer is
-//idle.
+// idle.
 #if ENABLED(MOVE_Z_WHEN_IDLE)
 #define MOVE_Z_IDLE_MULTIPLICATOR 1  // Multiply 1mm by this factor for the move step size.
 #endif
@@ -1743,7 +1743,7 @@
  *
  * See https://marlinfw.org/docs/features/lin_advance.html for full instructions.
  */
-//#define LIN_ADVANCE
+#define LIN_ADVANCE
 #if ENABLED(LIN_ADVANCE)
 //#define EXTRA_LIN_ADVANCE_K // Enable for second linear advance constants
 #define LIN_ADVANCE_K 0.22  // Unit: mm compression per 1mm/s extruder speed
@@ -1894,12 +1894,12 @@
 //#define ARC_SEGMENTS_PER_R    1 // Max segment length, MM_PER = Min
 #define MIN_ARC_SEGMENTS 24  // Minimum number of segments in a complete circle
 //#define ARC_SEGMENTS_PER_SEC 50 // Use feedrate to choose segment length (with MM_PER_ARC_SEGMENT
-//as the minimum)
+// as the minimum)
 #define N_ARC_CORRECTION 25  // Number of interpolated segments between corrections
 //#define ARC_P_CIRCLES           // Enable the 'P' parameter to specify complete circles
 //#define CNC_WORKSPACE_PLANES    // Allow G2/G3 to operate in XY, ZX, or YZ planes
 //#define SF_ARC_FIX              // Enable only if using SkeinForge with "Arc Point" fillet
-//procedure
+// procedure
 #endif
 
 // Support for G5 with XYZE destination and IJPQ offsets. Requires ~2666 bytes.
@@ -2221,7 +2221,7 @@
        //   For Bowden, the full length of the tube and nozzle.
        //   For direct drive, the full length of the nozzle.
 //#define ADVANCED_PAUSE_CONTINUOUS_PURGE       // Purge continuously up to the purge length until
-//interrupted.
+// interrupted.
 #define ADVANCED_PAUSE_PURGE_FEEDRATE \
     3  // (mm/s) Extrude feedrate (after loading). Should be slower than load feedrate.
 #define ADVANCED_PAUSE_PURGE_LENGTH \
@@ -2232,7 +2232,7 @@
 #define ADVANCED_PAUSE_RESUME_PRIME \
     0  // (mm) Extra distance to prime nozzle after returning from park.
 //#define ADVANCED_PAUSE_FANS_PAUSE             // Turn off print-cooling fans while the machine is
-//paused.
+// paused.
 
 // Filament Unload does a Retract, Delay, and Purge first:
 #define FILAMENT_UNLOAD_PURGE_RETRACT 13   // (mm) Unload initial retract length.
@@ -2250,8 +2250,8 @@
 #define HOME_BEFORE_FILAMENT_CHANGE  // If needed, home before parking for filament change
 
 //#define FILAMENT_LOAD_UNLOAD_GCODES           // Add M701/M702 Load/Unload G-codes, plus
-//Load/Unload in the LCD Prepare menu. #define FILAMENT_UNLOAD_ALL_EXTRUDERS         // Allow M702
-//to unload all extruders above a minimum target temp (as set by M302)
+// Load/Unload in the LCD Prepare menu. #define FILAMENT_UNLOAD_ALL_EXTRUDERS         // Allow M702
+// to unload all extruders above a minimum target temp (as set by M302)
 #endif
 
 // @section tmc
@@ -3009,8 +3009,8 @@
 // A position to move to (and raise Z) before taking the photo
 //#define PHOTO_POSITION { X_MAX_POS - 5, Y_MAX_POS, 0 }  // { xpos, ypos, zraise } (M240 X Y Z)
 //#define PHOTO_DELAY_MS   100                            // (ms) Duration to pause before moving
-//back (M240 P) #define PHOTO_RETRACT_MM   6.5                          // (mm) E retract/recover
-//for the photo move (M240 R S)
+// back (M240 P) #define PHOTO_RETRACT_MM   6.5                          // (mm) E retract/recover
+// for the photo move (M240 R S)
 
 // Canon RC-1 or homebrew digital camera trigger
 // Data from: https://www.doc-diy.net/photo/rc-1_hacked/
@@ -3036,7 +3036,7 @@
  *                     IR Wiring: https://git.io/JvJf7
  */
 //#define PHOTO_PULSES_US { 2000, 27850, 400, 1580, 400, 3580, 400 }  // (µs) Durations for
-//each 48.4kHz oscillation
+// each 48.4kHz oscillation
 #ifdef PHOTO_PULSES_US
 #define PHOTO_PULSE_DELAY_US \
     13  // (µs) Approximate duration of each HIGH and LOW pulse in the oscillation
@@ -3097,7 +3097,7 @@
 
 #if ENABLED(SPINDLE_FEATURE)
 //#define SPINDLE_CHANGE_DIR               // Enable if your spindle controller can change spindle
-//direction
+// direction
 #define SPINDLE_CHANGE_DIR_STOP  // Enable if the spindle should stop before changing spin direction
 #define SPINDLE_INVERT_DIR false  // Set to "true" if the spin direction is reversed
 
@@ -3348,7 +3348,7 @@
  *  - M206 and M428 are disabled.
  *  - G92 will revert to its behavior from Marlin 1.0.
  */
-#define NO_WORKSPACE_OFFSETS
+// #define NO_WORKSPACE_OFFSETS
 
 // Extra options for the M114 "Current Position" report
 //#define M114_DETAIL         // Use 'M114` for details to check planner calculations
@@ -3387,7 +3387,7 @@
  */
 //#define PAREN_COMMENTS      // Support for parentheses-delimited comments
 //#define GCODE_MOTION_MODES  // Remember the motion mode (G0 G1 G2 G3 G5 G38.X) and apply for X Y Z
-//E F, etc.
+// E F, etc.
 
 // Enable and set a (default) feedrate for all G0 moves
 //#define G0_FEEDRATE 3000 // (mm/min)
@@ -3499,7 +3499,7 @@
           // 1mm poles. For linear encoders this is ticks / mm,
           // for rotary encoders this is ticks / revolution.
 //#define I2CPE_ENC_1_TICKS_REV     (16 * 200)            // Only needed for rotary encoders; number
-//of stepper
+// of stepper
 // steps per full revolution (motor steps/rev * microstepping)
 //#define I2CPE_ENC_1_INVERT                              // Invert the direction of axis travel.
 #define I2CPE_ENC_1_EC_METHOD I2CPE_ECM_MICROSTEP  // Type of error error correction.
@@ -3535,7 +3535,7 @@
 #define I2CPE_DEF_EC_THRESH 0.1
 
 //#define I2CPE_ERR_THRESH_ABORT  100.0                   // Threshold size for error (in mm) error
-//on any given
+// on any given
 // axis after which the printer will abort. Comment out to
 // disable abort behavior.
 

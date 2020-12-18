@@ -1017,13 +1017,14 @@
 // From: https://www.thingiverse.com/thing:2494642
 // 61cm, 7.5cm y
 #define NOZZLE_TO_PROBE_OFFSET \
-    { -61.10, -7.5, -2.0 }
+    { -61.10, -25.5, -1.825 }
 
-// Most probes should stay away from the edges of the bed, but
+// Most probes should stay away from the edges of the bed, b133 * 60ut
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
 #define PROBING_MARGIN 10
 
 // X and Y axis travel speed (mm/min) between probes
+// Was 10000
 #define XY_PROBE_SPEED (133 * 60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
@@ -1160,11 +1161,11 @@
 
 // The size of the print bed
 #define X_BED_SIZE 300
-#define Y_BED_SIZE 300
+#define Y_BED_SIZE 290
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
-#define Y_MIN_POS 20
+#define Y_MIN_POS 0
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE + 20
 #define Y_MAX_POS Y_BED_SIZE + 20
@@ -1397,7 +1398,7 @@
 //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
 #define MESH_INSET 10         // Set Mesh bounds as an inset region of the bed
-#define GRID_MAX_POINTS_X 10  // Don't use more than 15 points per axis, implementation limited.
+#define GRID_MAX_POINTS_X 15  // Don't use more than 15 points per axis, implementation limited.
 #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
 #define UBL_MESH_EDIT_MOVES_Z    // Sophisticated users prefer no movement of nozzle
@@ -1485,7 +1486,9 @@
 
 // Homing speeds (mm/min)
 #define HOMING_FEEDRATE_XY (40 * 60)
-#define HOMING_FEEDRATE_Z (4 * 60)
+
+// NOTE: used to be 8 * 60, this is a bit of a step
+#define HOMING_FEEDRATE_Z (14 * 60)
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
