@@ -761,7 +761,7 @@
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
 #define DEFAULT_AXIS_STEPS_PER_UNIT \
-    { 80, 80, 400, 95 }
+    { 200, 80, 400, 415 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -851,7 +851,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-#define S_CURVE_ACCELERATION
+//#define S_CURVE_ACCELERATION
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -1017,7 +1017,7 @@
 // From: https://www.thingiverse.com/thing:2494642
 // 61cm, 7.5cm y
 #define NOZZLE_TO_PROBE_OFFSET \
-    { -61.10, -25.5, -1.825 }
+    { -61.10, -25.5, -1.9 }
 
 // Most probes should stay away from the edges of the bed, b133 * 60ut
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1161,7 +1161,7 @@
 
 // The size of the print bed
 #define X_BED_SIZE 300
-#define Y_BED_SIZE 290
+#define Y_BED_SIZE 280
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0

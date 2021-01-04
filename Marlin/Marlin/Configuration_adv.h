@@ -1021,7 +1021,7 @@
  * moves causes audible vibration and surface artifacts. The algorithm adapts to provide the best
  * possible step smoothing at the lowest stepping frequencies.
  */
-//#define ADAPTIVE_STEP_SMOOTHING
+#define ADAPTIVE_STEP_SMOOTHING
 
 /**
  * Custom Microstepping
@@ -2381,6 +2381,8 @@
  * https://github.com/teemuatlut/TMCStepper
  */
 #if HAS_TRINAMIC_CONFIG
+
+// HERE
 
 #define HOLD_MULTIPLIER 0.5  // Scales down the holding current from run current
 
