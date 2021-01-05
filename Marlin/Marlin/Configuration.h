@@ -763,6 +763,9 @@
 #define DEFAULT_AXIS_STEPS_PER_UNIT \
     { 80, 80, 400, 95 }
 
+// Pre afterburner upgrade
+// { 80, 80, 400, 95 }
+
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
@@ -1017,7 +1020,7 @@
 // From: https://www.thingiverse.com/thing:2494642
 // 61cm, 7.5cm y
 #define NOZZLE_TO_PROBE_OFFSET \
-    { -61.10, -25.5, -1.9 }
+    { 35.57, 10.6, -2 }
 
 // Most probes should stay away from the edges of the bed, b133 * 60ut
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1025,7 +1028,7 @@
 
 // X and Y axis travel speed (mm/min) between probes
 // Was 10000
-#define XY_PROBE_SPEED (133 * 60)
+#define XY_PROBE_SPEED (150 * 60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
@@ -1128,7 +1131,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR true
+#define INVERT_E0_DIR false
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -1164,8 +1167,8 @@
 #define Y_BED_SIZE 280
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS 0
-#define Y_MIN_POS 0
+#define X_MIN_POS -30
+#define Y_MIN_POS -20
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE + 20
 #define Y_MAX_POS Y_BED_SIZE + 20
@@ -1485,10 +1488,10 @@
 #endif
 
 // Homing speeds (mm/min)
-#define HOMING_FEEDRATE_XY (40 * 60)
+#define HOMING_FEEDRATE_XY (60 * 60)
 
 // NOTE: used to be 8 * 60, this is a bit of a step
-#define HOMING_FEEDRATE_Z (14 * 60)
+#define HOMING_FEEDRATE_Z (16 * 60)
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
