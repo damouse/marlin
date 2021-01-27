@@ -1746,7 +1746,7 @@
 #define LIN_ADVANCE
 #if ENABLED(LIN_ADVANCE)
 //#define EXTRA_LIN_ADVANCE_K // Enable for second linear advance constants
-#define LIN_ADVANCE_K 0.22  // Unit: mm compression per 1mm/s extruder speed
+#define LIN_ADVANCE_K 0.1  // Unit: mm compression per 1mm/s extruder speed
 //#define LA_DEBUG            // If enabled, this will generate debug information output over USB.
 //#define EXPERIMENTAL_SCURVE // Enable this option to permit S-Curve Acceleration
 #endif
@@ -2393,9 +2393,9 @@
 #define INTERPOLATE true
 
 #if AXIS_IS_TMC(X)
-#define X_CURRENT 650             // (mA) RMS current. Multiply by 1.414 for peak current.
+#define X_CURRENT 950             // (mA) RMS current. Multiply by 1.414 for peak current.
 #define X_CURRENT_HOME X_CURRENT  // (mA) RMS current for sensorless homing
-#define X_MICROSTEPS 16           // 0..256
+#define X_MICROSTEPS 256           // 0..256
 #define X_RSENSE 0.11
 #define X_CHAIN_POS -1  // -1..0: Not chained. 1: MCU MOSI connected. 2: Next in chain, ...
 //#define X_INTERPOLATE  true      // Enable to override 'INTERPOLATE' for the X axis
@@ -2411,9 +2411,9 @@
 #endif
 
 #if AXIS_IS_TMC(Y)
-#define Y_CURRENT 650
+#define Y_CURRENT 950
 #define Y_CURRENT_HOME Y_CURRENT
-#define Y_MICROSTEPS 16
+#define Y_MICROSTEPS 256
 #define Y_RSENSE 0.11
 #define Y_CHAIN_POS -1
 //#define Y_INTERPOLATE  true
@@ -2619,10 +2619,11 @@
  * Define your own with:
  * { <off_time[1..15]>, <hysteresis_end[-3..12]>, hysteresis_start[1..8] }
  */
+// Maybe CHOPPER_09STEP_24V
 #define CHOPPER_TIMING CHOPPER_DEFAULT_12V  // All axes (override below)
 //#define CHOPPER_TIMING_X  CHOPPER_DEFAULT_12V   // For X Axes (override below)
 //#define CHOPPER_TIMING_X2 CHOPPER_DEFAULT_12V
-//#define CHOPPER_TIMING_Y  CHOPPER_DEFAULT_12V   // For Y Axes (override below)
+#define CHOPPER_TIMING_Y CHOPPER_09STEP_24V  // For Y Axes (override below)
 //#define CHOPPER_TIMING_Y2 CHOPPER_DEFAULT_12V
 //#define CHOPPER_TIMING_Z  CHOPPER_DEFAULT_12V   // For Z Axes (override below)
 //#define CHOPPER_TIMING_Z2 CHOPPER_DEFAULT_12V
