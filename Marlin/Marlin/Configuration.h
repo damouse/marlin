@@ -873,7 +873,7 @@
 // #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
-//#define USE_PROBE_FOR_Z_HOMING
+// #define USE_PROBE_FOR_Z_HOMING
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1020,7 +1020,7 @@
 // From: https://www.thingiverse.com/thing:2494642
 // 61cm, 7.5cm y
 #define NOZZLE_TO_PROBE_OFFSET \
-    { 35.57, 10.6, -2 }
+    { 35.57, 10.6, -.45 }
 
 // Most probes should stay away from the edges of the bed, b133 * 60ut
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1029,7 +1029,7 @@
 // X and Y axis travel speed (mm/min) between probes
 // 100*60 is 6000
 // was 150*60, but its too noisy with the new stuff
-#define XY_PROBE_SPEED (90 * 60)
+#define XY_PROBE_SPEED (100 * 60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
@@ -1063,9 +1063,9 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE 10    // Z Clearance for Deploy/Stow
-#define Z_CLEARANCE_BETWEEN_PROBES 10  // Z Clearance between probe points
-#define Z_CLEARANCE_MULTI_PROBE 5      // Z Clearance between multiple probes
+#define Z_CLEARANCE_DEPLOY_PROBE 5    // Z Clearance for Deploy/Stow
+#define Z_CLEARANCE_BETWEEN_PROBES 5  // Z Clearance between probe points
+#define Z_CLEARANCE_MULTI_PROBE 5     // Z Clearance between multiple probes
 //#define Z_AFTER_PROBING          10 // Z position after probing is done
 
 #define Z_PROBE_LOW_POINT -2  // Farthest distance below the trigger-point to go before stopping

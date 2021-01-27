@@ -11,7 +11,8 @@ g0 Y280 F7800
 g0 Y10 F7800
 g0 Y280 F7800
 
-400\*8
-
+Small toothed pulley
 16*200=3200
+
+Larger toothed pulley
 16*160=2560
