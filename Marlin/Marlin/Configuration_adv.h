@@ -502,7 +502,7 @@
 #define CHAMBER_AUTO_FAN_PIN -1
 
 #define EXTRUDER_AUTO_FAN_TEMPERATURE 50
-#define EXTRUDER_AUTO_FAN_SPEED 204  // 255 == full speed
+#define EXTRUDER_AUTO_FAN_SPEED 255  // 255 == full speed
 #define CHAMBER_AUTO_FAN_TEMPERATURE 30
 #define CHAMBER_AUTO_FAN_SPEED 255
 
@@ -2204,10 +2204,10 @@
     10  // (mm/s) Unload filament feedrate. This can be pretty fast.
 #define FILAMENT_CHANGE_UNLOAD_ACCEL 25  // (mm/s^2) Lower acceleration may allow a faster feedrate.
 #define FILAMENT_CHANGE_UNLOAD_LENGTH \
-    420  // (mm) The length of filament for a complete unload.
-         //   For Bowden, the full length of the tube and nozzle.
-         //   For direct drive, the full length of the nozzle.
-         //   Set to 0 for manual unloading.
+    0  // (mm) The length of filament for a complete unload.
+       //   For Bowden, the full length of the tube and nozzle.
+       //   For direct drive, the full length of the nozzle.
+       //   Set to 0 for manual unloading.
 #define FILAMENT_CHANGE_SLOW_LOAD_FEEDRATE 6  // (mm/s) Slow move when starting load.
 #define FILAMENT_CHANGE_SLOW_LOAD_LENGTH \
     0  // (mm) Slow length, to allow time to insert material.
@@ -2225,10 +2225,10 @@
 #define ADVANCED_PAUSE_PURGE_FEEDRATE \
     3  // (mm/s) Extrude feedrate (after loading). Should be slower than load feedrate.
 #define ADVANCED_PAUSE_PURGE_LENGTH \
-    50  // (mm) Length to extrude after loading.
-        //   Set to 0 for manual extrusion.
-        //   Filament can be extruded repeatedly from the Filament Change menu
-        //   until extrusion is consistent, and to purge old filament.
+    0  // (mm) Length to extrude after loading.
+       //   Set to 0 for manual extrusion.
+       //   Filament can be extruded repeatedly from the Filament Change menu
+       //   until extrusion is consistent, and to purge old filament.
 #define ADVANCED_PAUSE_RESUME_PRIME \
     0  // (mm) Extra distance to prime nozzle after returning from park.
 //#define ADVANCED_PAUSE_FANS_PAUSE             // Turn off print-cooling fans while the machine is
@@ -2465,8 +2465,8 @@
 #endif
 
 #if AXIS_IS_TMC(E0)
-#define E0_CURRENT 650
-#define E0_MICROSTEPS 16
+#define E0_CURRENT 500
+#define E0_MICROSTEPS 0
 #define E0_RSENSE 0.11
 #define E0_CHAIN_POS -1
 //#define E0_INTERPOLATE true
@@ -2674,7 +2674,7 @@
 #define Z2_HYBRID_THRESHOLD 3
 #define Z3_HYBRID_THRESHOLD 3
 #define Z4_HYBRID_THRESHOLD 3
-#define E0_HYBRID_THRESHOLD 30
+#define E0_HYBRID_THRESHOLD 150
 #define E1_HYBRID_THRESHOLD 30
 #define E2_HYBRID_THRESHOLD 30
 #define E3_HYBRID_THRESHOLD 30
@@ -3459,9 +3459,10 @@
  * Host Prompt Support enables Marlin to use the host for user prompts so
  * filament runout and other processes can be managed from the host side.
  */
-//#define HOST_ACTION_COMMANDS
+#define HOST_ACTION_COMMANDS
 #if ENABLED(HOST_ACTION_COMMANDS)
-//#define HOST_PROMPT_SUPPORT
+#define HOST_PROMPT_SUPPORT
+#define EMERGENCY_PARSER
 //#define HOST_START_MENU_ITEM  // Add a menu item that tells the host to start
 #endif
 

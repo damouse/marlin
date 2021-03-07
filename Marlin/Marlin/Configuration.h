@@ -1217,7 +1217,7 @@
  * RAMPS-based boards use SERVO3_PIN for the first runout sensor.
  * For other boards you may need to define FIL_RUNOUT_PIN, FIL_RUNOUT2_PIN, etc.
  */
-//#define FILAMENT_RUNOUT_SENSOR
+#define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
 #define FIL_RUNOUT_ENABLED_DEFAULT \
     true  // Enable the sensor on startup. Override with M412 followed by M500.
@@ -1267,13 +1267,13 @@
 // After a runout is detected, continue printing this length of filament
 // before executing the runout script. Useful for a sensor at the end of
 // a feed tube. Requires 4 bytes SRAM per sensor, plus 4 bytes overhead.
-//#define FILAMENT_RUNOUT_DISTANCE_MM 25
+#define FILAMENT_RUNOUT_DISTANCE_MM 7
 
 #ifdef FILAMENT_RUNOUT_DISTANCE_MM
 // Enable this option to use an encoder disc that toggles the runout pin
 // as the filament moves. (Be sure to set FILAMENT_RUNOUT_DISTANCE_MM
 // large enough to avoid false positives.)
-//#define FILAMENT_MOTION_SENSOR
+#define FILAMENT_MOTION_SENSOR
 #endif
 #endif
 
@@ -1492,7 +1492,7 @@
 #define HOMING_FEEDRATE_XY (60 * 60)
 
 // NOTE: used to be 8 * 60, this is a bit of a step
-#define HOMING_FEEDRATE_Z (16 * 60)
+#define HOMING_FEEDRATE_Z (12 * 60)
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
