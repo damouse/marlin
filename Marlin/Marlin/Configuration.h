@@ -804,9 +804,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION 600           // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION 1000  // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION 800    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_ACCELERATION 600          // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION 800  // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION 800   // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk limits (mm/s)
@@ -1217,7 +1217,7 @@
  * RAMPS-based boards use SERVO3_PIN for the first runout sensor.
  * For other boards you may need to define FIL_RUNOUT_PIN, FIL_RUNOUT2_PIN, etc.
  */
-#define FILAMENT_RUNOUT_SENSOR
+// #define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
 #define FIL_RUNOUT_ENABLED_DEFAULT \
     true  // Enable the sensor on startup. Override with M412 followed by M500.
