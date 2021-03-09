@@ -1020,7 +1020,7 @@
 // From: https://www.thingiverse.com/thing:2494642
 // 61cm, 7.5cm y
 #define NOZZLE_TO_PROBE_OFFSET \
-    { 35.57, 10.6, -.45 }
+    { 35.57, 10.6, -2.6 }
 
 // Most probes should stay away from the edges of the bed, b133 * 60ut
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
